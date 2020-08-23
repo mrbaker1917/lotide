@@ -1,11 +1,4 @@
-const eqArrays = (arr1, arr2) => {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays.js');
 
 const assertArraysEqual = (arr1, arr2) => {
   const f = String.fromCodePoint(0x1F92C);
@@ -16,6 +9,8 @@ const assertArraysEqual = (arr1, arr2) => {
     console.log(`${f}${f}${f} Assertion Failed: [${arr1}] !== [${arr2}]`);
   }
 };
+
+module.exports = assertArraysEqual;
 
 assertArraysEqual([1, 2, 3], [1, 2, 3]);
 assertArraysEqual([1, 2, 3], [3, 2, 1]);
