@@ -9,7 +9,9 @@ const eqObjects = (object1, object2) => {
     if (Array.isArray(object1[k])) {
       return eqArrays(object1[k], object2[k]);
     } else if (typeof object1[k] === 'object') {
-      return eqObjects(object1[k], object2[k]);
+      if (!eqObjects(object1[k], object2[k])) {
+        return false;
+      }
     } else {
       if (object1[k] !== object2[k]) {
         return false;
@@ -20,6 +22,7 @@ const eqObjects = (object1, object2) => {
 };
 
 module.exports = eqObjects;
+assertEqual(eqObjects({ a: { z: 1 }, b: {f: 2} }, { a: { z: 1 }, b: {f: 2} }), false);
 
 assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
@@ -27,7 +30,9 @@ assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // =
 assertEqual(eqObjects({ a: { y: {q: {x: {r: 3}}}, z: 1 }, b: 2 }, { a: { y: {q: {x: {r: 3}}}, z: 1 }, b: 2 }), true);
 assertEqual(eqObjects({ a: { y: {q: {x: {r: 4}}}, z: 1 }, b: 2 }, { a: { y: {q: {x: {r: 3}}}, z: 1 }, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: {q: {x: {r: 4}}}, z: 1 }, b: {f: {p: {l: {m:{d: 99}}}}} }, { a: { y: {q: {x: {r: 4}}}, z: 1 }, b: {f: {p: {l: {m:{d: 99}}}}} }), true);
-assertEqual(eqObjects({ a: 5, z: 1, b: {f: {p: {l: {m:{d: 98}}}}} }, { a: 5, z: 1, b: {f: {p: {l: {m:{d: 99}}}}} }), false);
+assertEqual(eqObjects({ a: 5, z: 1, b: {f: {p: {l: {m:{d: 98}}}}}, v: {q: {n: {x: {s: {r2: 98}}}}} }, { a: 5, z: 1, b: {f: {p: {l: {m:{d: 98}}}}}, v: {q: {n: {x: {s: {r2: 98}}}}} }), true);
+assertEqual(eqObjects({ a: 5, z: 1, b: {f: {p: {l: {m:{d: 98}}}}}, v: {q: {n: {x: {s: {r2: 98}}}}} }, { a: 5, z: 1, b: {f: {p: {l: {m:{d: 98}}}}}, v: {q: {n: {x: {s: {r2: 99}}}}} }), false);
+
 
 // old tests:
 // const ab = { a: "1", b: "2" };
