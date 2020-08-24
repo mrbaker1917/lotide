@@ -11,10 +11,12 @@ const without = (sourceArray, stuffToRemove) => {
   return arr;
 };
 
-assertArraysEqual(without([1, 2, 3], [1, 2]), [3]);
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
-assertArraysEqual(without(["dog", "cat", "bird"], ["bird"]), ["dog"]);
+module.exports = without;
 
-const words = ["hello", "world", "lighthouse"];
-without(words, "lighthouse");
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// assertArraysEqual(without([1, 2, 3], [1, 2]), [3]);
+// assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
+// assertArraysEqual(without(["dog", "cat", "bird"], ["bird"]), ["dog"]);
+
+// const words = ["hello", "world", "lighthouse"];
+// without(words, "lighthouse");
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);

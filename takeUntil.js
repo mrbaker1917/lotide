@@ -15,7 +15,8 @@ const takeUntil = function(array, callback) {
   }
 };
 
-assertArraysEqual(takeUntil(words, word => word[0] === "m"), ["ground", "control", "to"]);
-assertArraysEqual(takeUntil(numbers, n => n === 4), [9, 8, 7, 6, 5]);
-assertArraysEqual(takeUntil(provinces, p => p[0] === "O"), ["Alberta", "British Columbia", "Manitoba", "Newfoundland", "New Brunswick", "Nova Scotia"]);
-assertArraysEqual(takeUntil(provinces, p => p[p.length - 1] === "d"), ["Alberta", "British Columbia", "Manitoba"]);
+module.exports = takeUntil;
+// assertArraysEqual(takeUntil(words, word => word[0] === "m"), ["ground", "control", "to"]);
+// assertArraysEqual(takeUntil(numbers, n => n === 4), [9, 8, 7, 6, 5]);
+// assertArraysEqual(takeUntil(provinces, p => p[0] === "O"), ["Alberta", "British Columbia", "Manitoba", "Newfoundland", "New Brunswick", "Nova Scotia"]);
+// assertArraysEqual(takeUntil(provinces, p => p[p.length - 1] === "d"), ["Alberta", "British Columbia", "Manitoba"]);

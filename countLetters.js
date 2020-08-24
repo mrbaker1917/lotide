@@ -22,3 +22,5 @@ for (let letter in output) {
   console.log(`How many of the letter "${letter}"?`);
   assertEqual(output[letter], answer[letter]);
 }
+
+module.exports = countLetters;

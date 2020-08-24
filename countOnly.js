@@ -1,4 +1,5 @@
 const assertEqual = require('./assertEqual');
+const countLetters = require('./countLetters');
 
 const countOnly = (allItems, itemsToCount) => {
   const result = {};
@@ -14,9 +15,10 @@ const countOnly = (allItems, itemsToCount) => {
       result[item] = 1;
     }
   }
-  console.log(result);
   return result;
 };
+
+module.exports = countOnly;
 
 const firstNames = [
   "Karl",
