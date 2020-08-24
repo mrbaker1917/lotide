@@ -1,15 +1,21 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-
-const arr1 = [9];
-let tailArr = tail(arr1);
-assertEqual(tailArr.length, 0);
+describe("#tail", () => {
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result[0], 'Lighthouse');
+    assert.strictEqual(result.length, 2);
+    assert.strictEqual(result[1], 'Labs');
+  });
+  it("tests that tail() does not alter original array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.strictEqual(words.length, 3);
+  });
+  it("returns an empty array for [9], cause no tail", () => {
+    const arr1 = [9];
+    let tailArr = tail(arr1);
+    assert.strictEqual(tailArr.length, 0);
+  });
+});
