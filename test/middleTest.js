@@ -13,4 +13,4 @@ assertArraysEqual(middle(['a', 'b', 'c', 'd', 'e', 'f']), ['c', 'd']); // to mak
 // this is to make sure middle() is not changing original array.
 const arr3 = [4, 5, 6, 7, 8, 9];
 const result = middle(arr3);
-assertArraysEqual(result, [6, 7]); 
+assertArraysEqual(result, [6, 7]);
