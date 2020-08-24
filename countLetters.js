@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const countLetters = st => {
   let result = {};
   for (let c of st) {
