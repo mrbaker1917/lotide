@@ -22,4 +22,4 @@ describe("#countLetters", () => {
     const expected = {b: 1, l: 1, i: 2, n: 2, g: 2};
     assert.deepEqual(actual, expected);
   });
-}); 
+});
