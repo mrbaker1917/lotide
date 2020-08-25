@@ -34,7 +34,7 @@ The following functions are currently implemented:
 * `eqObjects()`: determines whether two objects are equal; uses recursion.
 * `findKey()`: returns the key of a property, whose value satisfies a callback function.
 * `findKeyByValue()`: returns the key of a specified value.
-* `flatten()`: takes an array of array and flattens it so all elements are in the same array; only goes two levels deep.
+* `flatten()`: takes an array of array and flattens it so all elements are in the same array; uses recursion to go as deep as needed.
 * `head()`: returns the first element of an array.
 * `letterPositions()`: returns an object with the letters and their indices from a string.
 * `map()`: maps through an array, applying a callback function to each element.

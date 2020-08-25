@@ -1,9 +1,9 @@
 {
   "name": "@mrbaker1917/lotide",
   "keywords": ["lodash", "learning", "arrays", "objects"],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lighthouse Labs assignment on imitating lodash",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
