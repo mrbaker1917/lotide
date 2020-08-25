@@ -1,16 +1,19 @@
 
 const flatten = arr => {
   let flatArray = [];
-  for (let i of arr) {
-    if (Array.isArray(i)) {
-      for (let j of i) {
-        flatArray.push(j);
-      }
+  const flatter = function(arg) {
+    if (!Array.isArray(arg)) {
+      flatArray.push(arg);
     } else {
-      flatArray.push(i);
+      for (let a of arg) {
+        flatter(a);
+      }
     }
-  }
+  };
+  arr.forEach(flatter);
   return flatArray;
 };
 
 module.exports = flatten;
+
+console.log(flatten([1, [[2]], [3, 4]]));
