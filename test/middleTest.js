@@ -28,11 +28,7 @@ describe("#middle", () => {
   });
   it("tests that original array is not changed", () => {
     const arr3 = [4, 5, 6, 7, 8, 9];
-    const result = middle(arr3);
+    middle(arr3);
     assert.strictEqual(arr3.length, 6);
   });
 });
-// // this is to make sure middle() is not changing original array.
-// const arr3 = [4, 5, 6, 7, 8, 9];
-// const result = middle(arr3);
-// assertArraysEqual(result, [6, 7]);
